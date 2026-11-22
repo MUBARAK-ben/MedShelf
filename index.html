@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedShelf — Neighborhood Care &amp; Home Readiness Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand">MED<span>SHELF</span></a>
+      <nav class="nav-links">
+        <a href="#guides">Care Guides</a>
+        <a href="#shelf-desk">My Shelf</a>
+        <a href="#safety">Safety Notes</a>
+      </nav>
+      <a href="#shelf-desk" class="btn btn-primary">Open My Shelf</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">HOME READINESS &amp; COMMUNITY CARE</p>
+          <h1>Calm preparation before the rush begins.</h1>
+          <p class="hero-copy">
+            A practical home-care and clinic-prep companion built for everyday life—helping households organize essentials, find care topics fast, and walk into clinics or pharmacies with clear questions.
+          </p>
+          <div class="search-wrap">
+            <label for="careSearch" class="sr-only">Search care guides</label>
+            <input
+              type="search"
+              id="careSearch"
+              placeholder="Search topic (e.g. hydration, travel, first aid, prescription)..."
+            />
+          </div>
+        </div>
+
+        <aside class="meter-card">
+          <span class="badge">Shelf Readiness</span>
+          <h2><span id="shelfCount">1</span> Guide Shelved</h2>
+          <p>Select care guides below to curate a quick personal checklist for home or travel.</p>
+          <ul class="meter-list">
+            <li><strong>Purpose:</strong> Everyday home &amp; clinic clarity</li>
+            <li><strong>Tone:</strong> Calm, structured &amp; scannable</li>
+            <li><strong>Reminder:</strong> Always verify care with professionals</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="guides" class="section">
+      <div class="container">
+        <div class="guides-header">
+          <div>
+            <p class="eyebrow">SITUATIONAL GUIDES</p>
+            <h2>Everyday Care &amp; Prep Cards</h2>
+          </div>
+          <div class="filter-pills" role="group" aria-label="Filter care guides">
+            <button class="filter-pill active" data-topic="all" type="button">All</button>
+            <button class="filter-pill" data-topic="home" type="button">Home Care</button>
+            <button class="filter-pill" data-topic="travel" type="button">Travel &amp; Outdoors</button>
+            <button class="filter-pill" data-topic="clinic" type="button">Clinic Prep</button>
+          </div>
+        </div>
+
+        <div class="guides-grid">
+          <article class="guide-card saved" data-topic="home" data-keywords="hydration fluids warmth rest recovery">
+            <div class="card-top">
+              <span class="topic-tag">Home Care</span>
+              <span class="priority-tag">Essential</span>
+            </div>
+            <h3>Hydration &amp; Rest Routine</h3>
+            <p>Keep clean drinking water, oral rehydration basics, and a thermometer easy to reach when someone feels run down.</p>
+            <div class="card-foot">
+              <span><strong>Focus:</strong> Early recovery</span>
+              <button class="shelf-btn" type="button">On Shelf ✓</button>
+            </div>
+          </article>
+
+          <article class="guide-card" data-topic="travel" data-keywords="commute road trip cuts bandages wipes">
+            <div class="card-top">
+              <span class="topic-tag">Travel &amp; Outdoors</span>
+              <span class="priority-tag">On-the-Go</span>
+            </div>
+            <h3>Commute &amp; Road Kit Basics</h3>
+            <p>Pack sterile wipes, adhesive bandages, hand sanitizer, and personal essentials in a compact pouch for long trips.</p>
+            <div class="card-foot">
+              <span><strong>Focus:</strong> Minor scrapes &amp; transit</span>
+              <button class="shelf-btn" type="button">Add to Shelf</button>
+            </div>
+          </article>
+
+          <article class="guide-card" data-topic="clinic" data-keywords="doctor pharmacist dosage questions notes">
+            <div class="card-top">
+              <span class="topic-tag">Clinic Prep</span>
+              <span class="priority-tag">Smart Visit</span>
+            </div>
+            <h3>Clinic &amp; Pharmacy Question Sheet</h3>
+            <p>Note symptom start times, allergies, and current medications beforehand so consultations and dispensing stay clear.</p>
+            <div class="card-foot">
+              <span><strong>Focus:</strong> Clear communication</span>
+              <button class="shelf-btn" type="button">Add to Shelf</button>
+            </div>
+          </article>
+
+          <article class="guide-card" data-topic="home" data-keywords="cabinet expiry labels storage check">
+            <div class="card-top">
+              <span class="topic-tag">Home Care</span>
+              <span class="priority-tag">Monthly Check</span>
+            </div>
+            <h3>Medicine Cabinet Tidiness Check</h3>
+            <p>Store items away from heat and moisture, check expiry dates regularly, and keep anything unfamiliar out of reach.</p>
+            <div class="card-foot">
+              <span><strong>Focus:</strong> Safe storage</span>
+              <button class="shelf-btn" type="button">Add to Shelf</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="empty-msg" id="emptyMsg" hidden>
+          No care guides matched that search. Try words like <strong>hydration</strong>, <strong>travel</strong>, or <strong>pharmacy</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="shelf-desk" class="section section-alt">
+      <div class="container shelf-layout">
+        <div>
+          <p class="eyebrow">YOUR CURATED LIST</p>
+          <h2>Personal Care Shelf</h2>
+          <p class="shelf-sub">
+            Items you mark above appear here automatically so you can review your home or travel readiness list at a glance.
+          </p>
+          <button class="btn btn-outline" id="clearShelfBtn" type="button">Reset Shelf</button>
+        </div>
+
+        <div class="shelf-panel">
+          <ul class="shelf-items" id="shelfList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="safety" class="section">
+      <div class="container">
+        <p class="eyebrow">RESPONSIBLE PRACTICE</p>
+        <h2>Everyday Care Reminders</h2>
+        <div class="safety-grid">
+          <div class="safety-card">
+            <h3>Seek Prompt Medical Care</h3>
+            <p>When symptoms are severe, sudden, or worsening, visit a qualified clinic or hospital rather than relying on guesswork.</p>
+          </div>
+          <div class="safety-card">
+            <h3>Confirm Instructions Clearly</h3>
+            <p>Always follow licensed guidance on dosages, interactions, and storage—never share unverified remedies.</p>
+          </div>
+          <div class="safety-card">
+            <h3>Keep Emergency Contacts Handy</h3>
+            <p>Save trusted local clinic numbers and a nearby family contact so help can be reached without delay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p><strong>MEDSHELF</strong> — Neighborhood Care &amp; Home Readiness Demo</p>
+      <p>Built by Abdullah Mubarak • HTML, CSS &amp; JavaScript</p>
+    </div>
+  </footer>
+</body>
+</html>
